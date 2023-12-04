@@ -2,35 +2,24 @@
 # -*- coding: utf-8 -*-
 
 
-def sum_of_int_parts(*args):
+def sum_of_midle(list_of_nums):
     '''
-    Функция расчета целых частей после последнего отрицательного.
+    Функция, которая считает сумму элементов списка
     '''
-    if args:
-        values = [float(arg) for arg in args]
-
-        found_negative = False
-        total_sum = 0
-        for arg in values:
-            if arg < 0:
-                found_negative = True
-                total_sum = 0
-            elif found_negative:
-                total_sum += int(arg)
-        return total_sum
-
-    else: 
-        return None
+    if len(list_of_nums) == 1:
+        return list_of_nums[0]
+    else:
+        middle = len(list_of_nums) // 2
+        left_half_sum = sum_of_midle(list_of_nums[:middle])
+        right_half_sum = sum_of_midle(list_of_nums[middle:])
+        return left_half_sum + right_half_sum
 
 
 def main():
     '''
     Главная функция программы.
     '''
-    print(sum_of_int_parts())
-    print(sum_of_int_parts(3, -7, -1, 6, 9))
-    print(sum_of_int_parts(1, -5, 8, 4, 3, 9))
-
+    print(sum_of_midle([1, 2, 3, 4, 5]))
 
 if __name__ == "__main__":
     main()
