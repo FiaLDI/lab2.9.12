@@ -21,6 +21,6 @@ def main():
     '''
     print(sum_of_midle([1, 2, 3, 4, 5]))
 
+
 if __name__ == "__main__":
     main()
-    
